@@ -6,7 +6,7 @@ def classify_math_problem(problem_text):
     prompt = f"Lūdzu atrodi matemātikas uzdevuma tipu: \n\n '''{problem_text}'''\n\n" \
              " Iespējamie jautājumu tipi ir: " \
              "'Find.All' (uzdevumi, kuros jāatrod visi atrisinājumi); " \
-             "'Find.Count' (uzdevumi, kuros jāsaskaita iespēju vai atrisinājumu skaits); " \
+             "'Find.Count' (uzdevumi, kuros jāsaskaita cik iespēju vai atrisinājumu skaits); " \
              "'Find.Optimal' (uzdevumi, kuros jāatrod maksimālais vai minimālais risinājums); " \
              "'Find.Example' (uzdevumi, kuros jāatrod 1 piemērs vai pretpiemērs); " \
              "'Prove' (uzdevumi, kuros jāpierāda apgalvojums); " \
@@ -27,9 +27,11 @@ def classify_math_problem(problem_text):
 def main():
 
     # User input
-    problem_text = """Kādām naturālām $n$ vērtībām var atrast $2n+1$ naturālus skaitļus (ne obligāti dažādus) 
-ar īpašību, ka, izvēloties jebkurus $n+1$ no tiem, to summa dalīsies ar atlikušo $n$ 
-skaitļu summu?"""
+    problem_text = """Uz tāfeles pa reizei uzrakstīti visi naturālie skaitļi no $1$ līdz $n$ ieskaitot. 
+Ar vienu gājienu var izvēlēties divus uz tāfeles uzrakstītus skaitļus 
+(apzīmēsim tos ar $a$ un $b$), nodzēst tos un to vietā uzrakstīt $\left| a^2-b^2 \right|$. 
+Pēc $n-1$ gājiena uz tāfeles paliek viens skaitlis.  
+Vai tas var būt $0$, ja **(a)** $n=8$, **(b)** $n=9$?"""
 
     # Classify the problem
     classify_math_problem(problem_text)
